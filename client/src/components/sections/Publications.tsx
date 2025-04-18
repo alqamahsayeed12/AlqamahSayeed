@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/section-title";
 import PublicationCard from "@/components/ui/publication-card";
 import ProductCard from "@/components/ui/product-card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { publications } from "@/data/publications";
 import { products } from "@/data/products";
 
@@ -30,6 +32,19 @@ export default function Publications() {
                 />
               </motion.div>
             ))}
+          </div>
+          
+          {/* View All Publications Button */}
+          <div className="mt-8 flex justify-center">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
+              onClick={() => window.open("https://scholar.google.com/citations?user=9RGwHf4AAAAJ", "_blank")}
+            >
+              View All Publications
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
 
