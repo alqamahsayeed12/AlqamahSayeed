@@ -1,0 +1,54 @@
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { SiGooglescholar } from "react-icons/si";
+import SectionTitle from "@/components/ui/section-title";
+import PublicationCard from "@/components/ui/publication-card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
+import { publications } from "@/data/publications";
+
+export default function Publications() {
+  return (
+    <section id="publications" className="py-16 bg-gray-50">
+      <div className="container mx-auto px-6">
+        <SectionTitle>Publications</SectionTitle>
+
+        {/* Publications */}
+        <div className="mt-12">
+          <h3 className="text-2xl font-semibold mb-8 text-primary">Selected Publications</h3>
+          <div className="grid grid-cols-1 gap-6">
+            {publications.map((pub, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                <PublicationCard
+                  title={pub.title}
+                  authors={pub.authors}
+                  journal={pub.journal}
+                  url={pub.url}
+                />
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* View All Publications Button */}
+          <div className="mt-8 flex justify-center">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
+              onClick={() => window.open("https://scholar.google.com/citations?user=9RGwHf4AAAAJ", "_blank")}
+            >
+              <SiGooglescholar className="mr-2 h-5 w-5" />
+              View All Publications
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
