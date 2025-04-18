@@ -36,7 +36,7 @@ export default function ProductCard({
       <p className="text-gray-800 mb-4 flex-grow">{description}</p>
       <a 
         href={url} 
-        className="text-blue-700 hover:text-blue-900 font-medium inline-flex items-center mt-auto" 
+        className="text-primary hover:text-primary/80 font-medium inline-flex items-center mt-auto" 
         target="_blank" 
         rel="noopener noreferrer"
       >
