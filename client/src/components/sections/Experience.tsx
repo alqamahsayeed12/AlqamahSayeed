@@ -1,32 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Calendar, Briefcase, MapPin } from "lucide-react";
+import { Calendar, Briefcase } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
-import { Button } from "@/components/ui/button";
 import { experience } from "@/data/experience";
 
 export default function Experience() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
-  
-  // Calculate total pages
-  const totalPages = Math.ceil(experience.length / itemsPerPage);
-  
-  // Get current page items
-  const currentExperience = experience.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
-  
-  // Navigation functions
-  const goToNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
-  };
-  
-  const goToPrevPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1));
-  };
-  
   return (
     <section id="experience" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
@@ -39,12 +16,12 @@ export default function Experience() {
         </div>
         
         <div className="grid gap-8 max-w-5xl mx-auto">
-          {currentExperience.map((job, index) => (
+          {experience.map((job, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
             >
               <div className="p-6 md:p-8">
@@ -70,7 +47,7 @@ export default function Experience() {
                         key={idx}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.2 + (idx * 0.1) }}
+                        transition={{ duration: 0.3, delay: 0.1 + (idx * 0.05) }}
                         className="flex"
                       >
                         <div className="min-w-[8px] h-[8px] rounded-full bg-primary mt-2 mr-3" />
@@ -82,35 +59,6 @@ export default function Experience() {
               </div>
             </motion.div>
           ))}
-        </div>
-        
-        {/* Pagination Controls */}
-        <div className="flex justify-center items-center mt-12">
-          <div className="flex items-center rounded-xl bg-white shadow-sm border border-gray-100 p-2">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={goToPrevPage}
-              disabled={currentPage === 1}
-              className="text-primary hover:bg-gray-50"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-            
-            <div className="mx-4 text-sm font-medium text-gray-700">
-              {currentPage} of {totalPages}
-            </div>
-            
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={goToNextPage}
-              disabled={currentPage === totalPages}
-              className="text-primary hover:bg-gray-50"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </Button>
-          </div>
         </div>
       </div>
     </section>
