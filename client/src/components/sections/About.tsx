@@ -107,7 +107,7 @@ export default function About() {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4 text-blue-700">Download CV</h3>
               <Button 
-                className="bg-secondary hover:bg-secondary/90 flex items-center"
+                className="bg-blue-700 hover:bg-blue-800 flex items-center text-white font-medium"
                 asChild
               >
                 <a href="/api/cv" download="Alqamah_Sayeed_CV.pdf">

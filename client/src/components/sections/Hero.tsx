@@ -28,7 +28,7 @@ export default function Hero() {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-white"
+                className="bg-blue-700 hover:bg-blue-800 text-white font-medium"
               >
                 <a href="#contact">Contact Me</a>
               </Button>
@@ -36,7 +36,7 @@ export default function Hero() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white"
+                className="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white font-medium"
               >
                 <a href="#about">Learn More</a>
               </Button>
@@ -49,7 +49,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-secondary shadow-lg overflow-hidden">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-blue-700 shadow-lg overflow-hidden">
               <img 
                 src={profileImage} 
                 alt="Alqamah Sayeed" 
