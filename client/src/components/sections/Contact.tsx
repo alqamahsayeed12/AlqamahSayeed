@@ -33,7 +33,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const socialLinks = [
   { 
-    href: "https://www.linkedin.com/", 
+    href: "https://www.linkedin.com/in/alqamah-sayeed-ph-d-3aa249172", 
     label: "LinkedIn",
     icon: <Linkedin className="h-5 w-5" />
   },
@@ -48,7 +48,7 @@ const socialLinks = [
     icon: <Twitter className="h-5 w-5" />
   },
   { 
-    href: "https://scholar.google.com/", 
+    href: "https://scholar.google.com/citations?user=9RGwHf4AAAAJ&hl=en", 
     label: "Google Scholar",
     icon: <SiGooglescholar className="h-5 w-5" />
   },
@@ -205,7 +205,7 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-secondary mr-4" />
                   <div>
                     <h4 className="font-medium text-primary">Location</h4>
-                    <p className="text-gray-700">5771 Oakwood Rd. NW, Huntsville, AL</p>
+                    <p className="text-gray-700">320 Sparkman Dr., Huntsville, AL</p>
                   </div>
                 </div>
                 
