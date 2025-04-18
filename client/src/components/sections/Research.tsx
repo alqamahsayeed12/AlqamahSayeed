@@ -7,6 +7,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
 
+import merra2Pm25MapImage from "../../assets/merra2_pm25_map.png";
+
 export default function Research() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   
@@ -14,7 +16,7 @@ export default function Research() {
     {
       title: "MERRA2 CNN HAQAST PM2.5 Dataset",
       description: "An integrated machine learning framework and dataset for predicting PM2.5 concentrations using MERRA-2 reanalysis data. This comprehensive project develops CNN-based approaches for high-resolution air quality prediction.",
-      image: null,
+      image: merra2Pm25MapImage,
       technologies: ["Python", "TensorFlow", "Satellite Data", "Deep Learning", "Atmospheric Science", "Air Quality", "NASA Data"],
       links: [
         {
