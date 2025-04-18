@@ -33,7 +33,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const socialLinks = [
   { 
-    href: "https://www.linkedin.com/in/alqamah-sayeed-ph-d-3aa249172", 
+    href: "https://linkedin.com/in/alqamah-sayeed-ph-d-3aa249172", 
     label: "LinkedIn",
     icon: <Linkedin className="h-5 w-5" />
   },
@@ -48,7 +48,7 @@ const socialLinks = [
     icon: <Twitter className="h-5 w-5" />
   },
   { 
-    href: "https://scholar.google.com/citations?user=9RGwHf4AAAAJ&hl=en", 
+    href: "https://scholar.google.com/citations?user=9RGwHf4AAAAJ", 
     label: "Google Scholar",
     icon: <SiGooglescholar className="h-5 w-5" />
   },
