@@ -35,7 +35,7 @@ export default function Publications() {
             ))}
           </div>
           
-          {/* View Research Details Button */}
+          {/* View All Publications Button */}
           <div className="mt-8 flex justify-center">
             <Button
               variant="outline"
@@ -44,7 +44,7 @@ export default function Publications() {
               asChild
             >
               <Link href="/research">
-                View Research Details
+                View All Publications
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Link>
             </Button>
