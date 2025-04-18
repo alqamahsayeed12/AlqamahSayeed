@@ -20,10 +20,10 @@ export default function Hero() {
               Research Scientist | Atmospheric Science
             </h2>
             <p className="text-lg text-gray-800 mb-8">
-              As an atmospheric scientist with over eight years at the intersection of climate science and artificial intelligence, 
-              I pioneer innovative solutions for pressing environmental challenges. Currently leading NASA SERVIR's global Air Quality 
-              and Health thematic area, I transform satellite data into actionable intelligence through cutting-edge deep learning models,
-              directly improving air pollution forecasting capabilities and supporting evidence-based policy decisions across Asia and Africa.
+              As an atmospheric scientist with over eight years of experience at the intersection of climate science and artificial intelligence, 
+              I develop innovative solutions to address critical environmental challenges. In my role leading NASA SERVIR's global Air Quality 
+              and Health thematic area, I leverage satellite data and advanced deep learning models to improve air pollution forecasting and 
+              support data-driven policy advocacy across Asia and Africa.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
