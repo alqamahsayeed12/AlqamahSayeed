@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, Cloud, Wind } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const navLinks = [
@@ -18,8 +18,10 @@ export default function Header() {
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/hero" className="text-2xl font-bold text-primary">
-          Alqamah<span className="text-primary">.</span>Sayeed
+        <Link href="/hero" className="flex items-center text-2xl font-bold text-primary">
+          <Cloud className="h-6 w-6 mr-1" />
+          <Wind className="h-6 w-6 mr-2" />
+          <span>Alqamah Sayeed</span>
         </Link>
         
         {/* Desktop Navigation */}
