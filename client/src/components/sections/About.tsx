@@ -36,7 +36,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                As the Thematic Lead for NASA SERVIR's global Air Quality and Health thematic area, I lead the design and development of next-generation satellite-based monitoring tools and predictive deep learning frameworks that are reshaping air pollution forecasting. By collaborating with regional hubs across Southeast Asia, the Hindu Kush Himalaya, and Eastern and Southern Africa, I help deliver actionable environmental intelligence to support local decision-making and climate resilience.
+                As the Thematic Lead for NASA SERVIR's global Air Quality and Health thematic area, I lead the design and development of next-generation satellite-based monitoring tools and predictive deep learning frameworks that are reshaping air pollution forecasting. By collaborating with regional hubs across the United States, Central Americas, Southeast Asia, the Hindu Kush Himalaya, and Eastern and Southern Africa, I help deliver actionable environmental intelligence to support local decision-making and climate resilience.
               </motion.p>
               
               <motion.p 

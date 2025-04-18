@@ -5,7 +5,7 @@ export const experience = [
     period: "Aug 2024 - Present",
     responsibilities: [
       "Lead Air Quality and Health Thematic Area of NASA – SERVIR program.",
-      "Co-develop services with regional hubs in Southeast Asia, Hindukush, and Eastern and Southern Africa.",
+      "Co-develop services with regional hubs in United States, Central Americas, Southeast Asia, Hindukush, and Eastern and Southern Africa.",
       "Support air quality and health impact studies in regional hubs.",
       "Developed algorithm to bias-correct and downscale GEOS PM2.5 estimation from native 25km to 5km spatial resolution.",
       "Manage air-quality related applied science teams (AST) funded through NASA-ROSES.",
@@ -22,7 +22,7 @@ export const experience = [
       "Co-investigator on several funded projects (NASA-ROSES, NASA-Google partnership, SERVIR, etc.).",
       "Prepare and submit proposals for project funding.",
       "Mentored interns to achieve project goals.",
-      "Received USRA spot award for outstanding effort in the development of air quality dataset for Southeast Asia."
+      "Received USRA spot award for outstanding effort in the development of air quality dataset for United States, Central Americas, and Southeast Asia."
     ]
   },
   {

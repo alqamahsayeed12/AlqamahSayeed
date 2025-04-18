@@ -24,7 +24,7 @@ export default function Hero() {
               As an atmospheric scientist with over eight years of experience at the intersection of climate science and artificial intelligence, 
               I develop innovative solutions to address critical environmental challenges. In my role leading NASA SERVIR's global Air Quality 
               and Health thematic area, I leverage satellite data and advanced deep learning models to improve air pollution forecasting and 
-              support data-driven policy advocacy across Asia and Africa.
+              support data-driven policy advocacy across United States, Central Americas, Southeast Asia and Africa.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
