@@ -3,20 +3,18 @@ import { Link } from "wouter";
 import { SiGooglescholar } from "react-icons/si";
 import SectionTitle from "@/components/ui/section-title";
 import PublicationCard from "@/components/ui/publication-card";
-import ProductCard from "@/components/ui/product-card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { publications } from "@/data/publications";
-import { products } from "@/data/products";
 
 export default function Publications() {
   return (
     <section id="publications" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <SectionTitle>Publications & Products</SectionTitle>
+        <SectionTitle>Publications</SectionTitle>
 
         {/* Publications */}
-        <div className="mb-12 mt-12">
+        <div className="mt-12">
           <h3 className="text-2xl font-semibold mb-8 text-primary">Selected Publications</h3>
           <div className="grid grid-cols-1 gap-6">
             {publications.map((pub, index) => (
@@ -48,28 +46,6 @@ export default function Publications() {
               View All Publications
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
-          </div>
-        </div>
-
-        {/* Products */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-8 text-primary">Research Products</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <ProductCard
-                  title={product.title}
-                  description={product.description}
-                  iconName={product.iconName}
-                  url={product.url}
-                />
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>
