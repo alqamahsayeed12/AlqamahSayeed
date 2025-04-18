@@ -46,22 +46,15 @@ export default function About() {
             </div>
             
             <h3 className="text-xl font-semibold mb-4 text-primary">Education</h3>
-            <div className="space-y-4 mb-8">
-              {education.map((edu, index) => (
-                <motion.div 
-                  key={index} 
-                  className="flex flex-col"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.2 }}
-                >
-                  <span className="font-semibold text-gray-900">{edu.degree}</span>
-                  <span className="text-gray-800">{edu.institution}, {edu.location}</span>
-                  <span className="text-gray-700 text-sm">{edu.period}</span>
-                </motion.div>
-              ))}
-            </div>
+            <motion.p 
+              className="text-lg mb-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+            >
+              I hold a Ph.D. in Atmospheric Sciences from the University of Houston, where my research focused on integrating deep learning with numerical models to improve weather and air quality forecasting. Before that, I completed an M.Tech in Atmospheric and Oceanic Sciences at the Indian Institute of Technology, Delhi, where my master's thesis explored how climate change could impact India's wind energy potential. I began my academic journey with a B.Tech in Mechanical Engineering from Ideal Institute of Technology, Ghaziabad, India.
+            </motion.p>
           </motion.div>
         </div>
       </div>
