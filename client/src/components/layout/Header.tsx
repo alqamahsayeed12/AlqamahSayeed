@@ -3,8 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/hero", label: "Intro" },
+  { href: "/hero", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
   { href: "/publications", label: "Publications" },
@@ -19,7 +18,7 @@ export default function Header() {
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-primary">
+        <Link href="/hero" className="text-2xl font-bold text-primary">
           Alqamah<span className="text-primary">.</span>Sayeed
         </Link>
         
