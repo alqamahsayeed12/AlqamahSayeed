@@ -33,10 +33,10 @@ export default function ProductCard({
         {renderIcon()}
       </div>
       <h4 className="text-lg font-semibold text-primary mb-2">{title}</h4>
-      <p className="text-gray-700 mb-4 flex-grow">{description}</p>
+      <p className="text-gray-800 mb-4 flex-grow">{description}</p>
       <a 
         href={url} 
-        className="text-secondary hover:text-blue-700 inline-flex items-center mt-auto" 
+        className="text-blue-700 hover:text-blue-900 font-medium inline-flex items-center mt-auto" 
         target="_blank" 
         rel="noopener noreferrer"
       >

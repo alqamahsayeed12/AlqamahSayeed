@@ -16,11 +16,11 @@ export default function PublicationCard({
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
       <h4 className="text-lg font-semibold text-primary mb-2">{title}</h4>
-      <p className="text-gray-700 mb-2">{authors}</p>
-      <p className="text-gray-600 mb-4">{journal}</p>
+      <p className="text-gray-800 mb-2">{authors}</p>
+      <p className="text-gray-700 mb-4">{journal}</p>
       <a 
         href={url} 
-        className="text-secondary hover:text-blue-700 inline-flex items-center" 
+        className="text-blue-700 hover:text-blue-900 font-medium inline-flex items-center" 
         target="_blank" 
         rel="noopener noreferrer"
       >
