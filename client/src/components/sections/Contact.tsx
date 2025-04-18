@@ -198,7 +198,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-gray-50 p-8 rounded-lg h-full">
-              <h3 className="text-2xl font-semibold mb-6 text-primary">Contact Information</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-primary">Let's Connect</h3>
               
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
@@ -206,22 +206,6 @@ export default function Contact() {
                   <div>
                     <h4 className="font-medium text-gray-900">Location</h4>
                     <p className="text-gray-800">320 Sparkman Dr., Huntsville, AL</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-primary mr-4" />
-                  <div>
-                    <h4 className="font-medium text-gray-900">Phone</h4>
-                    <p className="text-gray-800">(346)-717-5706</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-primary mr-4" />
-                  <div>
-                    <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-800">alqamah.sayeed12@gmail.com</p>
                   </div>
                 </div>
               </div>
