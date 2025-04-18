@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { ExternalLink, GitBranch, Database, Download } from "lucide-react";
+import { ExternalLink, GitBranch, Database, Download, FileBarChart } from "lucide-react";
 import { FaSatelliteDish } from "react-icons/fa";
 import SectionTitle from "@/components/ui/section-title";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import merra2DatasetImage from "../../assets/merra2-dataset.jpg";
 
 export default function Research() {
   const researchProjects = [
@@ -24,7 +23,7 @@ export default function Research() {
     {
       title: "MERRA2 CNN HAQAST PM2.5 Dataset",
       description: "A dataset derived from MERRA-2 reanalysis data for PM2.5 estimation using convolutional neural networks. This NASA-hosted dataset is designed to support air quality research and applications.",
-      image: merra2DatasetImage,
+      image: null,
       technologies: ["Satellite Data", "Atmospheric Science", "Air Quality", "NASA Data"],
       links: [
         {
