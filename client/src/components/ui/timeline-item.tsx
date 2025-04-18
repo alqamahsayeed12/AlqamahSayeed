@@ -13,7 +13,7 @@ export default function TimelineItem({
 }: TimelineItemProps) {
   return (
     <div className="relative pl-8 group transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4 rounded-lg">
-      <div className="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-secondary z-10"></div>
+      <div className="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-primary z-10"></div>
       
       <div className="mb-4">
         <h3 className="text-xl font-semibold text-primary">{title}</h3>

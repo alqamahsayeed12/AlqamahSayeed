@@ -14,7 +14,7 @@ export default function Publications() {
 
         {/* Publications */}
         <div className="mb-12 mt-12">
-          <h3 className="text-2xl font-semibold mb-8 text-blue-700">Selected Publications</h3>
+          <h3 className="text-2xl font-semibold mb-8 text-primary">Selected Publications</h3>
           <div className="grid grid-cols-1 gap-6">
             {publications.map((pub, index) => (
               <motion.div 
@@ -43,7 +43,7 @@ export default function Publications() {
           >
             <a 
               href="#"
-              className="text-blue-700 hover:text-blue-900 font-medium inline-flex items-center"
+              className="text-primary hover:text-primary/80 font-medium inline-flex items-center"
             >
               <span>View All Publications</span>
               <ArrowRight className="h-4 w-4 ml-1" />
@@ -53,7 +53,7 @@ export default function Publications() {
 
         {/* Products */}
         <div>
-          <h3 className="text-2xl font-semibold mb-8 text-blue-700">Research Products</h3>
+          <h3 className="text-2xl font-semibold mb-8 text-primary">Research Products</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
               <motion.div 

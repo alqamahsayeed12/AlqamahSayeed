@@ -10,7 +10,7 @@ export default function Experience() {
         <SectionTitle>Professional Experience</SectionTitle>
         
         <div className="relative pl-8 md:pl-12 space-y-12 mt-12">
-          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-secondary"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary"></div>
           
           {experience.map((job, index) => (
             <motion.div
