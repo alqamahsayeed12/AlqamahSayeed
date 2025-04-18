@@ -20,9 +20,10 @@ export default function Hero() {
               Research Scientist | Atmospheric Science Specialist
             </h2>
             <p className="text-lg text-gray-800 mb-8">
-              Experienced researcher with 8+ years in AI-driven atmospheric sciences, 
-              specializing in machine learning and deep learning for air quality prediction, 
-              satellite data assimilation, and climate modeling.
+              I'm an atmospheric scientist with over eight years of experience in air quality research, 
+              specializing in the use of advanced machine learning techniques. I currently lead NASA SERVIR's 
+              global Air Quality and Health thematic area, where I develop satellite-based tools and deep 
+              learning models to improve air pollution forecasting and support decision-making across Asia and Africa.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 

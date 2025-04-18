@@ -19,13 +19,13 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-lg mb-6">
-              I am a research scientist specializing in AI-driven atmospheric sciences with expertise in machine learning and deep learning for air quality prediction, satellite data assimilation, and climate modeling. My work focuses on developing innovative solutions for environmental challenges using advanced computational techniques.
+              I'm an atmospheric scientist with over eight years of experience in air quality research, specializing in the use of advanced machine learning techniques for environmental monitoring and forecasting. My expertise lies in developing innovative ML/DL solutions for air quality prediction, satellite data assimilation, and climate modeling challenges.
             </p>
             <p className="text-lg mb-6">
-              Currently, I serve as the Thematic Lead for Air Quality and Health at the University of Alabama in Huntsville, where I collaborate with regional hubs across Southeast Asia, Hindukush, and Eastern and Southern Africa to develop services and solutions for air quality monitoring and forecasting.
+              Currently, I lead NASA SERVIR's global Air Quality and Health thematic area, where I develop satellite-based tools and deep learning models to improve air pollution forecasting. I collaborate with regional hubs across Southeast Asia, Hindukush, and Eastern and Southern Africa to support decision-making and environmental monitoring initiatives.
             </p>
             <p className="text-lg mb-8">
-              I have published in high-impact journals, led multi-institutional projects, and contributed to global air quality initiatives, bridging the gap between cutting-edge AI research and practical environmental applications.
+              I have published in high-impact journals, led multi-institutional projects, and contributed to global air quality initiatives, bridging the gap between cutting-edge AI research and practical environmental applications to address critical public health and climate challenges.
             </p>
             
             <h3 className="text-xl font-semibold mb-4 text-primary">Key Skills</h3>
