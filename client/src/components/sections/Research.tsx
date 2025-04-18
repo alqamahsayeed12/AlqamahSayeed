@@ -139,33 +139,6 @@ export default function Research() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="mt-12 bg-white p-6 rounded-lg shadow-md"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-xl font-semibold mb-4 text-primary">Research Focus</h3>
-          <p className="text-gray-800 mb-4">
-            My research focuses on applying machine learning techniques to atmospheric science, particularly 
-            for air quality monitoring and prediction. I work extensively with NASA's MERRA-2 (Modern-Era 
-            Retrospective analysis for Research and Applications, Version 2) reanalysis data to develop models 
-            that can accurately estimate PM2.5 concentrations at high spatial resolutions.
-          </p>
-          <p className="text-gray-800 mb-4">
-            The MERRA2 CNN HAQAST PM2.5 Dataset project implements convolutional neural networks to analyze satellite data, 
-            enabling more accurate air quality predictions in regions where ground monitoring is sparse. This 
-            approach helps bridge gaps in air quality monitoring networks and provides valuable information for 
-            public health and environmental policy.
-          </p>
-          <p className="text-gray-800">
-            This integrated project combines both the development of machine learning models and a comprehensive pre-processed 
-            dataset hosted by NASA's Goddard Earth Sciences Data and Information Services Center (GES DISC), 
-            specifically formatted for machine learning applications in PM2.5 estimation.
-          </p>
-        </motion.div>
       </div>
 
       {/* Project Detail Modal */}
