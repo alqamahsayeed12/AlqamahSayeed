@@ -19,13 +19,13 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-lg mb-6">
-              With over eight years at the frontier of atmospheric science and artificial intelligence, I've dedicated my career to transforming environmental monitoring through innovative computational approaches. My expertise spans developing sophisticated machine learning architectures for air quality prediction, optimizing satellite data assimilation techniques, and creating advanced climate modeling solutions to address urgent environmental challenges.
+              With over eight years at the intersection of atmospheric science and artificial intelligence, I've dedicated my career to advancing environmental monitoring through cutting-edge computational approaches. My work spans the development of machine learning architectures for air quality prediction, optimization of satellite data assimilation, and the creation of innovative climate modeling solutions to address pressing global challenges.
             </p>
             <p className="text-lg mb-6">
-              As the Thematic Lead for NASA SERVIR's global Air Quality and Health initiative, I direct the development of next-generation satellite-based monitoring tools and predictive deep learning frameworks that revolutionize air pollution forecasting. My work connects cutting-edge science with practical applications through strategic collaborations with regional hubs throughout Southeast Asia, the Hindukush region, and Eastern and Southern Africa, empowering local decision-makers with critical environmental intelligence.
+              As the Thematic Lead for NASA SERVIR's global Air Quality and Health thematic area, I lead the design and development of next-generation satellite-based monitoring tools and predictive deep learning frameworks that are reshaping air pollution forecasting. By collaborating with regional hubs across Southeast Asia, the Hindu Kush Himalaya, and Eastern and Southern Africa, I help deliver actionable environmental intelligence to support local decision-making and climate resilience.
             </p>
             <p className="text-lg mb-8">
-              My research has been featured in high-impact scientific journals, where I've pioneered novel approaches that bridge theoretical AI advancements with real-world environmental applications. Through leadership of multi-institutional research initiatives and contributions to global air quality programs, I've helped transform how we monitor, predict, and mitigate environmental threats, ultimately supporting improved public health outcomes and more effective climate adaptation strategies worldwide.
+              My research has been featured in leading scientific journals, where I've pioneered approaches that connect theoretical AI advancements to real-world environmental applications. Through multi-institutional research leadership and contributions to global air quality programs, I strive to transform how we monitor, predict, and respond to environmental threats—advancing public health outcomes and strengthening climate adaptation worldwide.
             </p>
             
             <h3 className="text-xl font-semibold mb-4 text-primary">Key Skills</h3>
