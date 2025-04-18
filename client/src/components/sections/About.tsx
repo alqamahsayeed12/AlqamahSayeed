@@ -73,25 +73,25 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Contact Information</h3>
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-blue-700 mr-3 mt-1" />
+                  <MapPin className="h-5 w-5 text-primary mr-3 mt-1" />
                   <span className="text-gray-800">5771 Oakwood Rd. NW, Huntsville, AL</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-blue-700 mr-3" />
+                  <Phone className="h-5 w-5 text-primary mr-3" />
                   <span className="text-gray-800">(346)-717-5706</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-blue-700 mr-3" />
+                  <Mail className="h-5 w-5 text-primary mr-3" />
                   <span className="text-gray-800">alqamah.sayeed12@gmail.com</span>
                 </div>
               </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Languages</h3>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Languages</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-800">English</span>
@@ -105,9 +105,9 @@ export default function About() {
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Download CV</h3>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Download CV</h3>
               <Button 
-                className="bg-blue-700 hover:bg-blue-800 flex items-center text-white font-medium"
+                className="bg-primary hover:bg-primary/90 flex items-center text-white font-medium"
                 asChild
               >
                 <a href="/api/cv" download="Alqamah_Sayeed_CV.pdf">

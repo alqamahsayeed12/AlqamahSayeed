@@ -43,7 +43,7 @@ export default function Header() {
     <header className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="text-2xl font-bold text-primary">
-          Alqamah<span className="text-secondary">.</span>Sayeed
+          Alqamah<span className="text-primary">.</span>Sayeed
         </a>
         
         {/* Desktop Navigation */}
@@ -52,10 +52,10 @@ export default function Header() {
             <a 
               key={link.href}
               href={link.href} 
-              className={`relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-secondary after:transition-[width] after:duration-300 hover:after:w-full ${
+              className={`relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full ${
                 activeSection === link.href.substring(1) 
-                  ? "text-secondary after:w-full" 
-                  : "text-primary hover:text-secondary transition-colors"
+                  ? "text-primary after:w-full font-medium" 
+                  : "text-gray-700 hover:text-primary transition-colors"
               }`}
             >
               {link.label}
@@ -84,8 +84,8 @@ export default function Header() {
                 onClick={() => setIsOpen(false)}
                 className={`${
                   activeSection === link.href.substring(1) 
-                    ? "text-secondary" 
-                    : "text-primary hover:text-secondary transition-colors"
+                    ? "text-primary font-medium" 
+                    : "text-gray-700 hover:text-primary transition-colors"
                 }`}
               >
                 {link.label}
