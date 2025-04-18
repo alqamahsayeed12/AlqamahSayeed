@@ -17,7 +17,7 @@ export default function Hero() {
               <span className="text-primary">Alqamah Sayeed</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-primary font-semibold mb-6">
-              Research Scientist | Atmospheric Science Specialist
+              Research Scientist | Atmospheric Science
             </h2>
             <p className="text-lg text-gray-800 mb-8">
               I'm an atmospheric scientist with over eight years of experience in air quality research, 
