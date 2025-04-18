@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import SectionTitle from "@/components/ui/section-title";
 import PublicationCard from "@/components/ui/publication-card";
 import ProductCard from "@/components/ui/product-card";
@@ -34,16 +35,18 @@ export default function Publications() {
             ))}
           </div>
           
-          {/* View All Publications Button */}
+          {/* View Research Details Button */}
           <div className="mt-8 flex justify-center">
             <Button
               variant="outline"
               size="lg"
               className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
-              onClick={() => window.open("https://scholar.google.com/citations?user=9RGwHf4AAAAJ", "_blank")}
+              asChild
             >
-              View All Publications
-              <ExternalLink className="ml-2 h-4 w-4" />
+              <Link href="/research">
+                View Research Details
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>
