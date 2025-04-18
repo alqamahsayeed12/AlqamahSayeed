@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Check, MapPin, Phone, Mail } from "lucide-react";
+import { Check, MapPin } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import { skills } from "@/data/skills";
 import { education } from "@/data/education";
@@ -71,25 +70,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Contact Information</h3>
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-primary mr-3 mt-1" />
-                  <span className="text-gray-800">5771 Oakwood Rd. NW, Huntsville, AL</span>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-800">(346)-717-5706</span>
-                </div>
-                <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-800">alqamah.sayeed12@gmail.com</span>
-                </div>
-              </div>
-            </div>
-            
+          >            
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4 text-primary">Languages</h3>
               <div className="space-y-3">
@@ -102,32 +83,6 @@ export default function About() {
                   <span className="text-sm text-gray-700">Native</span>
                 </div>
               </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Download CV</h3>
-              <Button 
-                className="bg-primary hover:bg-primary/90 flex items-center text-white font-medium"
-                asChild
-              >
-                <a href="/api/cv" download="Alqamah_Sayeed_CV.pdf">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className="h-4 w-4 mr-2"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Download Full CV
-                </a>
-              </Button>
             </div>
           </motion.div>
         </div>

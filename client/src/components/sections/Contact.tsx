@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { MapPin, Phone, Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { MapPin, Linkedin, Github, Twitter } from "lucide-react";
 import { SiGooglescholar } from "react-icons/si";
 import { useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
