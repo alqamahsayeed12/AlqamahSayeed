@@ -42,10 +42,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="text-2xl font-bold">
-              Alqamah<span className="text-white">.</span>Sayeed
+              Alqamah Sayeed
             </h3>
             <p className="mt-2 text-gray-300">
-              Research Scientist | Atmospheric Science Specialist
+              Research Scientist | Atmospheric Science
             </p>
           </div>
           
