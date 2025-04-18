@@ -29,7 +29,7 @@ export default function About() {
               I have published in high-impact journals, led multi-institutional projects, and contributed to global air quality initiatives, bridging the gap between cutting-edge AI research and practical environmental applications.
             </p>
             
-            <h3 className="text-xl font-semibold mb-4 text-blue-700">Key Skills</h3>
+            <h3 className="text-xl font-semibold mb-4 text-primary">Key Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {skills.map((skill, index) => (
                 <motion.div 
@@ -40,13 +40,13 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Check className="h-5 w-5 text-blue-700 mr-2" />
+                  <Check className="h-5 w-5 text-primary mr-2" />
                   <span className="text-gray-800">{skill}</span>
                 </motion.div>
               ))}
             </div>
             
-            <h3 className="text-xl font-semibold mb-4 text-blue-700">Education</h3>
+            <h3 className="text-xl font-semibold mb-4 text-primary">Education</h3>
             <div className="space-y-4 mb-8">
               {education.map((edu, index) => (
                 <motion.div 

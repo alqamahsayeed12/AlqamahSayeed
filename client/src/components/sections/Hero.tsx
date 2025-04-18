@@ -16,7 +16,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-primary">Alqamah Sayeed</span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-blue-700 font-semibold mb-6">
+            <h2 className="text-xl md:text-2xl text-primary font-semibold mb-6">
               Research Scientist | Atmospheric Science Specialist
             </h2>
             <p className="text-lg text-gray-800 mb-8">
@@ -28,7 +28,7 @@ export default function Hero() {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-blue-700 hover:bg-blue-800 text-white font-medium"
+                className="bg-primary hover:bg-primary/90 text-white font-medium"
               >
                 <a href="#contact">Contact Me</a>
               </Button>
@@ -36,7 +36,7 @@ export default function Hero() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white font-medium"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
               >
                 <a href="#about">Learn More</a>
               </Button>
@@ -49,7 +49,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-blue-700 shadow-lg overflow-hidden">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary shadow-lg overflow-hidden">
               <img 
                 src={profileImage} 
                 alt="Alqamah Sayeed" 
