@@ -12,7 +12,7 @@ export default function About() {
         
         <div className="flex flex-col md:flex-row gap-12 mt-12">
           <motion.div 
-            className="md:w-2/3"
+            className="w-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,28 +61,6 @@ export default function About() {
                   <span className="text-gray-700 text-sm">{edu.period}</span>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="md:w-1/3 space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Languages</h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-800">English</span>
-                  <span className="text-sm text-gray-700">Fluent</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-800">Hindi</span>
-                  <span className="text-sm text-gray-700">Native</span>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
