@@ -181,7 +181,7 @@ export default function Contact() {
                 
                 <Button 
                   type="submit"
-                  className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6"
+                  className="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6"
                   disabled={contactMutation.isPending}
                 >
                   {contactMutation.isPending ? "Sending..." : "Send Message"}
@@ -198,11 +198,11 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-gray-50 p-8 rounded-lg h-full">
-              <h3 className="text-2xl font-semibold mb-6 text-blue-700">Contact Information</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-primary">Contact Information</h3>
               
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-blue-700 mr-4" />
+                  <MapPin className="h-6 w-6 text-primary mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Location</h4>
                     <p className="text-gray-800">320 Sparkman Dr., Huntsville, AL</p>
@@ -210,7 +210,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-blue-700 mr-4" />
+                  <Phone className="h-6 w-6 text-primary mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Phone</h4>
                     <p className="text-gray-800">(346)-717-5706</p>
@@ -218,7 +218,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-blue-700 mr-4" />
+                  <Mail className="h-6 w-6 text-primary mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
                     <p className="text-gray-800">alqamah.sayeed12@gmail.com</p>
@@ -226,7 +226,7 @@ export default function Contact() {
                 </div>
               </div>
               
-              <h3 className="text-xl font-semibold mb-4 text-blue-700">Connect with me</h3>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Connect with me</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((link) => (
                   <a 
@@ -235,7 +235,7 @@ export default function Contact() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label={link.label}
-                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+                    className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                   >
                     {link.icon}
                   </a>

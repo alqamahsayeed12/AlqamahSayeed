@@ -18,7 +18,7 @@ export default function TimelineItem({
       <div className="mb-4">
         <h3 className="text-xl font-semibold text-primary">{title}</h3>
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mt-1">
-          <span className={company === "University of Houston, Department of Earth and Atmospheric Science" ? "text-black font-medium" : "text-secondary font-medium"}>{company}</span>
+          <span className="text-gray-800 font-medium">{company}</span>
           <span className="text-gray-600">{period}</span>
         </div>
       </div>
