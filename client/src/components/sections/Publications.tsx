@@ -41,12 +41,10 @@ export default function Publications() {
               variant="outline"
               size="lg"
               className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
-              asChild
+              onClick={() => window.open("https://scholar.google.com/citations?user=9RGwHf4AAAAJ", "_blank")}
             >
-              <Link href="/research">
-                View All Publications
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Link>
+              View All Publications
+              <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
