@@ -20,7 +20,7 @@ export default function PublicationCard({
       <p className="text-gray-700 mb-4">{journal}</p>
       <a 
         href={url} 
-        className="text-blue-700 hover:text-blue-900 font-medium inline-flex items-center" 
+        className="text-primary hover:text-primary/80 font-medium inline-flex items-center" 
         target="_blank" 
         rel="noopener noreferrer"
       >
