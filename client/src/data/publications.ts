@@ -1,9 +1,9 @@
 export const publications = [
   {
     title: "GOES‐R PM2.5 Evaluation and Bias Correction: A Deep Learning Approach",
-    authors: "Sayeed, A., et al. (2025)",
-    journal: "Earth and Space Science, 12, e2024EA004012",
-    url: "https://doi.org/10.1029/2024EA004012"
+    authors: "Sayeed A, Gupta P, Henderson B, Kondragunta S, Zhang H, Liu Y. (2025)",
+    journal: "Earth and Space Science, 12(2)",
+    url: "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024EA004012"
   },
   {
     title: "Deep-BCSI: A deep learning-based framework for bias correction and spatial imputation of PM2.5 concentrations in South Korea",
@@ -18,10 +18,10 @@ export const publications = [
     url: "https://doi.org/10.1016/j.envadv.2024.100546"
   },
   {
-    title: "A Deep Convolutional Neural Network Model for improving WRF Forecasts",
-    authors: "Sayeed, A., et al. (2023)",
-    journal: "IEEE Trans. Neural Netw. Learning Syst., 34, 750–760",
-    url: "https://doi.org/10.1109/TNNLS.2021.3084086"
+    title: "A Deep Convolutional Neural Network Model for Improving WRF Simulations",
+    authors: "Sayeed A, Choi Y, Jung J, Lops Y, Eslami E, Salman A. (2023)",
+    journal: "IEEE Transactions on Neural Networks and Learning Systems, 34(2):750-760",
+    url: "https://ieeexplore.ieee.org/document/9510103/"
   },
   {
     title: "Evaluating satellite-derived PM2.5 using ground-based observations during the COVID-19 lockdown in the Eastern US",
@@ -31,20 +31,20 @@ export const publications = [
   },
   {
     title: "CNN-based model for the spatial imputation (CMSI version 1.0) of in-situ ozone and PM2.5 measurements",
-    authors: "Sayeed, A., Liao, K. J., Liu, Q. Y., et al. (2022)",
+    authors: "Sayeed A, Choi Y, Pouyaei A, Lops Y, Jung J, Salman A. (2022)",
     journal: "Atmospheric Environment, 289, 119348",
-    url: "https://doi.org/10.1016/j.atmosenv.2022.119348"
+    url: "https://linkinghub.elsevier.com/retrieve/pii/S1352231022004137"
   },
   {
-    title: "Impact of GOES-16 AOD Assimilation in CMAQ during the 2019 Southern Appalachian Wildfire Event",
-    authors: "Sayeed, A., Gupta, P., & Henderson, B. H. (2022)",
-    journal: "Remote Sensing, 14(11), 2710",
-    url: "https://doi.org/10.3390/rs14112710"
+    title: "A novel CMAQ-CNN hybrid model to forecast hourly surface-ozone concentrations 14 days in advance",
+    authors: "Sayeed A, Choi Y, Eslami E, Jung J, Lops Y, Salman A, Lee J, Park H, Choi M. (2021)",
+    journal: "Scientific Reports, 11(1)",
+    url: "https://www.nature.com/articles/s41598-021-90446-6"
   },
   {
     title: "Hourly and Daily PM2.5 Estimations Using MERRA‐2: A Machine Learning Approach",
-    authors: "Sayeed, A., et al. (2022)",
-    journal: "Earth and Space Science, 9, e2022EA002375",
-    url: "https://doi.org/10.1029/2022EA002375"
+    authors: "Sayeed A, Lin P, Gupta P, Tran N, Buchard V, Christopher S. (2022)",
+    journal: "Earth and Space Science, 9(11)",
+    url: "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022EA002375"
   }
 ];
