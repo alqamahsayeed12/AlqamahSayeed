@@ -38,12 +38,12 @@ const socialLinks = [
     icon: <Linkedin className="h-5 w-5" />
   },
   { 
-    href: "https://github.com/", 
+    href: "https://github.com/Alqamah-Sayeed", 
     label: "GitHub",
     icon: <Github className="h-5 w-5" />
   },
   { 
-    href: "https://twitter.com/", 
+    href: "https://twitter.com/AlqamahSayeed89", 
     label: "Twitter",
     icon: <Twitter className="h-5 w-5" />
   },
