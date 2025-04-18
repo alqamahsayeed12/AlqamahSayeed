@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import profileImage from "../../assets/alqamah_profile.png";
 
 export default function Hero() {
@@ -31,7 +32,7 @@ export default function Hero() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white font-medium"
               >
-                <a href="#contact">Contact Me</a>
+                <Link href="/contact">Contact Me</Link>
               </Button>
               <Button 
                 variant="outline"
@@ -39,7 +40,7 @@ export default function Hero() {
                 asChild
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
               >
-                <a href="#about">Learn More</a>
+                <Link href="/about">Learn More</Link>
               </Button>
             </div>
           </motion.div>
