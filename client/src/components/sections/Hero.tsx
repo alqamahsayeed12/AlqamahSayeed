@@ -16,10 +16,10 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-primary">Alqamah Sayeed</span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-secondary font-semibold mb-6">
+            <h2 className="text-xl md:text-2xl text-blue-700 font-semibold mb-6">
               Research Scientist | Atmospheric Science Specialist
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-gray-800 mb-8">
               Experienced researcher with 8+ years in AI-driven atmospheric sciences, 
               specializing in machine learning and deep learning for air quality prediction, 
               satellite data assimilation, and climate modeling.

@@ -29,7 +29,7 @@ export default function About() {
               I have published in high-impact journals, led multi-institutional projects, and contributed to global air quality initiatives, bridging the gap between cutting-edge AI research and practical environmental applications.
             </p>
             
-            <h3 className="text-xl font-semibold mb-4 text-secondary">Key Skills</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-700">Key Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {skills.map((skill, index) => (
                 <motion.div 
@@ -40,13 +40,13 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Check className="h-5 w-5 text-secondary mr-2" />
-                  <span>{skill}</span>
+                  <Check className="h-5 w-5 text-blue-700 mr-2" />
+                  <span className="text-gray-800">{skill}</span>
                 </motion.div>
               ))}
             </div>
             
-            <h3 className="text-xl font-semibold mb-4 text-secondary">Education</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-700">Education</h3>
             <div className="space-y-4 mb-8">
               {education.map((edu, index) => (
                 <motion.div 
@@ -57,9 +57,9 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.2 }}
                 >
-                  <span className="font-semibold">{edu.degree}</span>
-                  <span className="text-gray-700">{edu.institution}, {edu.location}</span>
-                  <span className="text-gray-600 text-sm">{edu.period}</span>
+                  <span className="font-semibold text-gray-900">{edu.degree}</span>
+                  <span className="text-gray-800">{edu.institution}, {edu.location}</span>
+                  <span className="text-gray-700 text-sm">{edu.period}</span>
                 </motion.div>
               ))}
             </div>
@@ -73,39 +73,39 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-700">Contact Information</h3>
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-secondary mr-3 mt-1" />
-                  <span>5771 Oakwood Rd. NW, Huntsville, AL</span>
+                  <MapPin className="h-5 w-5 text-blue-700 mr-3 mt-1" />
+                  <span className="text-gray-800">5771 Oakwood Rd. NW, Huntsville, AL</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-secondary mr-3" />
-                  <span>(346)-717-5706</span>
+                  <Phone className="h-5 w-5 text-blue-700 mr-3" />
+                  <span className="text-gray-800">(346)-717-5706</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-secondary mr-3" />
-                  <span>alqamah.sayeed12@gmail.com</span>
+                  <Mail className="h-5 w-5 text-blue-700 mr-3" />
+                  <span className="text-gray-800">alqamah.sayeed12@gmail.com</span>
                 </div>
               </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Languages</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-700">Languages</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span>English</span>
-                  <span className="text-sm text-gray-600">Fluent</span>
+                  <span className="text-gray-800">English</span>
+                  <span className="text-sm text-gray-700">Fluent</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Hindi</span>
-                  <span className="text-sm text-gray-600">Native</span>
+                  <span className="text-gray-800">Hindi</span>
+                  <span className="text-sm text-gray-700">Native</span>
                 </div>
               </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Download CV</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-700">Download CV</h3>
               <Button 
                 className="bg-secondary hover:bg-secondary/90 flex items-center"
                 asChild

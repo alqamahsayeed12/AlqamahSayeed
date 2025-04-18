@@ -110,7 +110,7 @@ export default function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary font-medium">Name</FormLabel>
+                      <FormLabel className="text-gray-800 font-medium">Name</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="Your name" 
@@ -128,7 +128,7 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary font-medium">Email</FormLabel>
+                      <FormLabel className="text-gray-800 font-medium">Email</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="Your email" 

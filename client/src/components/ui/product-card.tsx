@@ -17,13 +17,13 @@ export default function ProductCard({
   const renderIcon = () => {
     switch (iconName) {
       case "database":
-        return <Database className="w-10 h-10 text-secondary" />;
+        return <Database className="w-10 h-10 text-blue-700" />;
       case "cloud":
-        return <Cloud className="w-10 h-10 text-secondary" />;
+        return <Cloud className="w-10 h-10 text-blue-700" />;
       case "chart":
-        return <BarChart className="w-10 h-10 text-secondary" />;
+        return <BarChart className="w-10 h-10 text-blue-700" />;
       default:
-        return <Database className="w-10 h-10 text-secondary" />;
+        return <Database className="w-10 h-10 text-blue-700" />;
     }
   };
 
