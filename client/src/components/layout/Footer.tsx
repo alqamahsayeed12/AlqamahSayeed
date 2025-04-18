@@ -3,11 +3,13 @@ import { Linkedin, Github, Twitter } from "lucide-react";
 import { SiGooglescholar } from "react-icons/si";
 
 const quickLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#publications", label: "Publications" },
-  { href: "#contact", label: "Contact" },
+  { href: "/hero", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
+  { href: "/publications", label: "Publications" },
+  { href: "/research", label: "Research" },
+  { href: "/resources", label: "Resources" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const socialLinks = [
@@ -55,12 +57,12 @@ export default function Footer() {
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
-                    <a 
+                    <Link 
                       href={link.href} 
                       className="hover:text-gray-300 transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
