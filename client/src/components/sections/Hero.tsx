@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import profileImage from "../../assets/alqamah_profile.png";
 
 export default function Hero() {
   return (
@@ -48,17 +49,12 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-accent/20 flex items-center justify-center overflow-hidden">
-              <svg
-                className="w-full h-full text-secondary/20"
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill="currentColor"
-                  d="M100,20 C130,20 155,45 155,75 C155,105 130,130 100,130 C70,130 45,105 45,75 C45,45 70,20 100,20 Z M100,140 C150,140 190,160 190,185 L10,185 C10,160 50,140 100,140 Z"
-                />
-              </svg>
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-secondary shadow-lg overflow-hidden">
+              <img 
+                src={profileImage} 
+                alt="Alqamah Sayeed" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>
