@@ -1,0 +1,28 @@
+1. Yeo, I., Choi, Y., Lops, Y. & Sayeed, A. Efficient PM2.5 forecasting using geographical correlation based on integrated deep learning algorithms. Neural Comput & Applic 33, 15073–15089 (2021).
+2. Smetter, R., Pinakana, S. D., Gupta, P., Sayeed, A. & Raysoni, A. Evaluating NO 2 Trends in the Rapidly Urbanizing Lower Rio Grande Valley of South Texas Using Low-Cost Sensors. AGU24.
+3. Singh, D. et al. Deep-BCSI: A deep learning-based framework for bias correction and spatial imputation of PM2. 5 concentrations in South Korea. Atmospheric Research 301, 107283 (2024).
+4. Seo, J. et al. PM2. 5 3-day Forecasting at US Embassies and Consulates using NASA Model powered by Machine Learning. AGU24.
+5. Sayeed, A., Lops, Y., Choi, Y., Jung, J. & Salman, A. K. Bias correcting and extending the PM forecast by CMAQ up to 7 days using deep convolutional neural networks. Atmospheric Environment 253, 118376 (2021).
+6. Sayeed, A. et al. Hourly and Daily PM2.5 Estimations Using MERRA‐2: A Machine Learning Approach. Earth and Space Science 9, e2022EA002375 (2022).
+7. Sayeed, A. et al. GOES‐R PM2.5 Evaluation and Bias Correction: A Deep Learning Approach. Earth and Space Science 12, e2024EA004012 (2025).
+8. Sayeed, A., Eslami, E., Lops, Y. & Choi, Y. CMAQ-CNN: A new-generation of post-processing techniques for chemical transport models using deep neural networks. Atmospheric Environment 273, 118961 (2022).
+9. Sayeed, A. et al. CNN-based model for the spatial imputation (CMSI version 1.0) of in-situ ozone and PM2. 5 measurements. Atmospheric Environment 289, 119348 (2022).
+10. Sayeed, A. et al. A Deep Convolutional Neural Network Model for improving WRF Forecasts. IEEE Trans. Neural Netw. Learning Syst. 34, 750–760 (2023).
+11. Sayeed, A. et al. A deep convolutional neural network model for improving WRF simulations. IEEE Transactions on Neural Networks and Learning Systems 34, 750–760 (2021).
+12. Sayeed, A. et al. A novel CMAQ-CNN hybrid model to forecast hourly surface-ozone concentrations 14 days in advance. Scientific reports 11, 10891 (2021).
+13. Sayeed, A. et al. Using a deep convolutional neural network to predict 2017 ozone concentrations, 24 hours in advance. Neural Networks 121, 396–408 (2020).
+14. Sayeed, A. Integrating Deep Neural Network with Numerical Models to Have Better Weather and Air Quality Forecast Both Spatially and Temporally. (2021).
+15. Salman, A. K., Pouyaei, A., Choi, Y., Lops, Y. & Sayeed, A. Deep learning solver for solving advection–diffusion​ equation in comparison to finite difference methods. Communications in Nonlinear Science and Numerical Simulation 115, 106780 (2022).
+16. Qi, M. et al. Evaluating EPA’s AirFuse Real-time Fusion-based Air Pollution Mapping Algorithm Using Computer Vision-based Techniques. AGU24.
+17. Pinakana, S. D. et al. Review of agricultural biomass burning and its impact on air quality in the continental United States of America. Environmental Advances 100546 (2024).
+18. Pinakana, S. D. et al. Integrating Low-Cost Sensors and Satellite Data to Investigate Environmental Justice Issues of Air Pollutants from Sugarcane Stubble Burning in the Rio Grande Valley, Texas, USA. AGU24.
+19. Park, S., Sayeed, A., Seo, J., Gupta, P. & Naeger, A. R. PM 2.5 Estimation from GOES & TEMPO: An Ensemble Deep Learning Approach. AGU24.
+20. Lops, Y. et al. Application of a Partial Convolutional Neural Network for Estimating Geostationary Aerosol Optical Depth Data. Geophysical Research Letters 48, e2021GL093096 (2021).
+21. Lops, Y., Choi, Y., Eslami, E. & Sayeed, A. Real-time 7-day forecast of pollen counts using a deep convolutional neural network. Neural Comput & Applic 32, 11827–11836 (2020).
+22. Jung, J. et al. The Impact of Springtime‐Transported Air Pollutants on Local Air Quality With Satellite‐Constrained NOx Emission Adjustments Over East Asia. JGR Atmospheres 127, e2021JD035251 (2022).
+23. Ghahremanloo, M. et al. Estimating daily high-resolution PM2. 5 concentrations over Texas: Machine Learning approach. Atmospheric Environment 247, 118209 (2021).
+24. Eslami, E., Salman, A. K., Choi, Y., Sayeed, A. & Lops, Y. A data ensemble approach for real-time air quality forecasting using extremely randomized trees and deep neural networks. Neural Comput & Applic 32, 7563–7579 (2020).
+25. Eslami, E., Choi, Y., Lops, Y. & Sayeed, A. A real-time hourly ozone prediction system using deep convolutional neural network. Neural Comput & Applic 32, 8783–8797 (2020).
+26. Eslami, E., Choi, Y., Lops, Y., Sayeed, A. & Salman, A. K. Using wavelet transform and dynamic time warping to identify the limitations of the CNN model as an air quality forecasting system. Geoscientific Model Development Discussions 2020, 1–23 (2020).
+27. Dong, Z., Mao, J., Sayeed, A. & Gupta, P. Using Machine Learning to Improve PM 2.5 Estimates in Alaska during Summer Wildfires. AGU24.
+28. Sayeed, A. et al. A novel CMAQ-CNN hybrid model to forecast hourly surface-ozone concentrations 14 days in advance, Sci. Rep., 11, 10891. (2021).
