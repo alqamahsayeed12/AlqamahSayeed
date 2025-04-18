@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { SiGooglescholar } from "react-icons/si";
 import SectionTitle from "@/components/ui/section-title";
 import PublicationCard from "@/components/ui/publication-card";
 import ProductCard from "@/components/ui/product-card";
@@ -43,6 +44,7 @@ export default function Publications() {
               className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium"
               onClick={() => window.open("https://scholar.google.com/citations?user=9RGwHf4AAAAJ", "_blank")}
             >
+              <SiGooglescholar className="mr-2 h-5 w-5" />
               View All Publications
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
