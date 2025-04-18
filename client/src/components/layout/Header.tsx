@@ -18,10 +18,10 @@ export default function Header() {
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/hero" className="flex items-center text-2xl font-bold text-primary">
-          <Cloud className="h-6 w-6 mr-1" />
-          <Wind className="h-6 w-6 mr-2" />
-          <span>Alqamah Sayeed</span>
+        <Link href="/hero" className="flex items-center text-2xl font-bold">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-blue-400 text-white flex items-center justify-center mr-2 shadow-md border-2 border-white">
+            <span className="text-lg font-bold">AS</span>
+          </div>
         </Link>
         
         {/* Desktop Navigation */}
