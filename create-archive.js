@@ -15,6 +15,8 @@ const filesToInclude = [
   'static-deploy.js',
   'vite.config.static.ts',
   'DEPLOYMENT_GUIDE.md',
+  'DEPLOYMENT_CHECKLIST.md',
+  'MANUAL_DEPLOYMENT_STEPS.md',
   'package.json',
   'tsconfig.json',
   'postcss.config.js',
