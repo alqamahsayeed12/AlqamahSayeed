@@ -1,240 +1,345 @@
-import { execSync } from 'child_process';
+// deploy-gh-pages.js
+import { exec } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Create a deployment directory
-console.log('Creating deployment directory...');
-if (fs.existsSync('gh-pages-deploy')) {
-  fs.rmSync('gh-pages-deploy', { recursive: true, force: true });
-}
-fs.mkdirSync('gh-pages-deploy');
-fs.mkdirSync('gh-pages-deploy/assets', { recursive: true });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Copy the static HTML files
-console.log('Creating static HTML structure...');
-// Create basic index.html
-const indexHtml = `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alqamah Sayeed | Atmospheric Science</title>
-    <meta name="description" content="Professional portfolio for Alqamah Sayeed, a research scientist specializing in atmospheric science.">
-    <link rel="stylesheet" href="./assets/style.css">
-    <script src="./assets/script.js" defer></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>`;
+console.log("🚀 Starting GitHub Pages deployment preparation...");
 
-fs.writeFileSync('gh-pages-deploy/index.html', indexHtml);
+// Create necessary files for GitHub Pages deployment
+const createDeploymentFiles = () => {
+  // 1. Create a custom vite.config.static.js for GitHub Pages
+  console.log("📝 Creating static Vite configuration...");
+  const viteConfig = `
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
-// Create .nojekyll file (required for GitHub Pages)
-fs.writeFileSync('gh-pages-deploy/.nojekyll', '');
-
-// Copy assets
-console.log('Copying assets...');
-try {
-  execSync('cp -r attached_assets/* gh-pages-deploy/assets/', { stdio: 'inherit' });
-} catch (error) {
-  console.warn('Some assets may not have copied correctly.');
-}
-
-// Create a style.css
-const styleCSS = `
-/* This is a minimal CSS file for the static version */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #2D3436;
-  background-color: #ffffff;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-}
-
-a {
-  color: #0984E3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Static site message */
-.static-message {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #0984E3;
-}
-
-h2 {
-  font-size: 1.5rem;
-  color: #2D3436;
-  margin-top: 40px;
-}
-
-.profile-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 20px 0;
-  border: 3px solid #0984E3;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px 0;
-}
-
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #0984E3;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-  background-color: #0672c5;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.download-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #0984E3;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.download-btn:hover {
-  background-color: #0672c5;
-  text-decoration: none;
-}
-
-footer {
-  margin-top: auto;
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 20px 0;
-  text-align: center;
-}
-`;
-
-fs.writeFileSync('gh-pages-deploy/assets/style.css', styleCSS);
-
-// Create the JavaScript file
-const scriptJS = `
-// This creates a simplified static version of the portfolio
-document.addEventListener('DOMContentLoaded', function() {
-  const root = document.getElementById('root');
-  
-  // Create header
-  const header = document.createElement('header');
-  header.innerHTML = \`
-    <div class="static-message">
-      <h1>Alqamah Sayeed</h1>
-      <p>Atmospheric Science Researcher</p>
-      <img src="./assets/image_1744990854831.png" alt="Alqamah Sayeed" class="profile-img">
-      <p>Leading innovative research in atmospheric science with expertise in Machine Learning and Remote Sensing across United States, Central Americas, Southeast Asia and Africa.</p>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/alqamah-sayeed-ph-d-3aa249172" target="_blank" title="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a href="https://github.com/Alqamah-Sayeed" target="_blank" title="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        </a>
-        <a href="https://twitter.com/AlqamahSayeed89" target="_blank" title="Twitter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-        </a>
-      </div>
-      <p>Please note: This is a simplified static version of my portfolio. For the full interactive experience, please visit my GitHub repository.</p>
-      <a href="https://github.com/Alqamah-Sayeed" class="download-btn">View on GitHub</a>
-    </div>
-  \`;
-  
-  root.appendChild(header);
-  
-  // Create footer
-  const footer = document.createElement('footer');
-  footer.innerHTML = \`
-    <p>© ${new Date().getFullYear()} Alqamah Sayeed. All rights reserved.</p>
-    <p>This static page was deployed directly to GitHub Pages.</p>
-  \`;
-  
-  root.appendChild(footer);
+// https://vitejs.dev/config/
+export default defineConfig({
+  base: '/',
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, '../attached_assets'),
+      '@shared': path.resolve(__dirname, '../shared'),
+    },
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
 });
 `;
 
-fs.writeFileSync('gh-pages-deploy/assets/script.js', scriptJS);
-
-// Create README.md with deployment instructions
-const readmeContent = `# Alqamah Sayeed - Portfolio Website
-
-This is a static version of Alqamah Sayeed's professional portfolio.
-
-## About This Repository
-
-This repository contains a simplified static version of the portfolio website for GitHub Pages deployment.
-
-## GitHub Pages Deployment
-
-This site is automatically deployed to: https://alqamah-sayeed.github.io
-
-## Full Version
-
-For the full interactive version with all features, please visit the main repository.
-
-## Contact
-
-- LinkedIn: [alqamah-sayeed-ph-d-3aa249172](https://linkedin.com/in/alqamah-sayeed-ph-d-3aa249172)
-- GitHub: [Alqamah-Sayeed](https://github.com/Alqamah-Sayeed)
-- Twitter: [@AlqamahSayeed89](https://twitter.com/AlqamahSayeed89)
+  // 2. Create a simplified index.html for the client
+  console.log("📝 Creating client-only index.html...");
+  const indexHtml = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Professional portfolio for Alqamah Sayeed, a research scientist specializing in atmospheric science." />
+    <title>Alqamah Sayeed | Atmospheric Science</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
 `;
 
-fs.writeFileSync('gh-pages-deploy/README.md', readmeContent);
-
-// Create the tar.gz file for easy download
-console.log('Creating deployment archive...');
-try {
-  execSync('tar -czf github-pages-static.tar.gz -C gh-pages-deploy .', { stdio: 'inherit' });
-  console.log('Archive created: github-pages-static.tar.gz');
-} catch (error) {
-  console.error('Failed to create archive:', error);
+  // 3. Create a modified package.json with GitHub Pages settings
+  console.log("📝 Creating GitHub Pages package.json...");
+  const packageJson = `
+{
+  "name": "alqamah-sayeed-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://alqamah-sayeed.github.io",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-accordion": "^1.2.4",
+    "@radix-ui/react-alert-dialog": "^1.1.7",
+    "@radix-ui/react-aspect-ratio": "^1.1.3",
+    "@radix-ui/react-avatar": "^1.1.4",
+    "@radix-ui/react-checkbox": "^1.1.5",
+    "@radix-ui/react-collapsible": "^1.1.4",
+    "@radix-ui/react-context-menu": "^2.2.7",
+    "@radix-ui/react-dialog": "^1.1.7",
+    "@radix-ui/react-dropdown-menu": "^2.1.7",
+    "@radix-ui/react-hover-card": "^1.1.7",
+    "@radix-ui/react-label": "^2.1.3",
+    "@radix-ui/react-menubar": "^1.1.7",
+    "@radix-ui/react-navigation-menu": "^1.2.6",
+    "@radix-ui/react-popover": "^1.1.7",
+    "@radix-ui/react-progress": "^1.1.3",
+    "@radix-ui/react-radio-group": "^1.2.4",
+    "@radix-ui/react-scroll-area": "^1.2.4",
+    "@radix-ui/react-select": "^2.1.7",
+    "@radix-ui/react-separator": "^1.1.3",
+    "@radix-ui/react-slider": "^1.2.4",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@radix-ui/react-switch": "^1.1.4",
+    "@radix-ui/react-tabs": "^1.1.4",
+    "@radix-ui/react-toast": "^1.2.7",
+    "@radix-ui/react-toggle": "^1.1.3",
+    "@radix-ui/react-toggle-group": "^1.1.3",
+    "@radix-ui/react-tooltip": "^1.2.0",
+    "@tanstack/react-query": "^5.60.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "date-fns": "^3.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^11.18.2",
+    "input-otp": "^1.4.2",
+    "lucide-react": "^0.453.0",
+    "next-themes": "^0.4.6",
+    "react": "^18.3.1",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.55.0",
+    "react-icons": "^5.4.0",
+    "react-resizable-panels": "^2.1.7",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.2",
+    "wouter": "^3.3.5",
+    "zod": "^3.24.2",
+    "zod-validation-error": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/vite": "^4.1.3",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.1.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.17",
+    "typescript": "5.6.3",
+    "vite": "^5.4.14"
+  }
 }
+`;
 
-console.log('\nDeployment preparation complete!');
-console.log('\nGitHub Pages Deployment Instructions:');
-console.log('1. Download the file: github-pages-static.tar.gz');
-console.log('2. Create a repository named exactly: alqamah-sayeed.github.io');
-console.log('3. Extract the archive and upload the files to your repository');
-console.log('4. Your site will be live at https://alqamah-sayeed.github.io');
-console.log('\nAlternatively, you can use the "gh-pages-deploy" folder directly.');
+  // 4. Create README.md with instructions
+  console.log("📝 Creating README.md...");
+  const readmeContent = `
+# Alqamah Sayeed Portfolio
+
+Professional portfolio website for Alqamah Sayeed, a research scientist specializing in atmospheric science.
+
+## Deployment
+
+This site is deployed at [https://alqamah-sayeed.github.io](https://alqamah-sayeed.github.io)
+
+## Local Development
+
+To run this site locally:
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+## Deploy to GitHub Pages
+
+To deploy updates:
+
+\`\`\`bash
+npm run deploy
+\`\`\`
+`;
+
+  // 5. Create .nojekyll file (needed for GitHub Pages with files that have leading underscores)
+  console.log("📝 Creating .nojekyll file...");
+
+  // 6. Create directory structure for GitHub deployment
+  console.log("📁 Creating directory structure for deployment...");
+  
+  // Create a 'deploy' directory if it doesn't exist
+  if (!fs.existsSync('deploy')) {
+    fs.mkdirSync('deploy');
+  }
+  
+  // Create a 'deploy/src' directory for client source code
+  if (!fs.existsSync('deploy/src')) {
+    fs.mkdirSync('deploy/src', { recursive: true });
+  }
+  
+  // Create a 'deploy/public' directory for static assets
+  if (!fs.existsSync('deploy/public')) {
+    fs.mkdirSync('deploy/public', { recursive: true });
+  }
+  
+  // Write files to the deploy directory
+  fs.writeFileSync('deploy/vite.config.js', viteConfig.trim());
+  fs.writeFileSync('deploy/index.html', indexHtml.trim());
+  fs.writeFileSync('deploy/package.json', packageJson.trim());
+  fs.writeFileSync('deploy/README.md', readmeContent.trim());
+  fs.writeFileSync('deploy/.nojekyll', '');
+  
+  console.log("✅ Deployment files created in the 'deploy' directory");
+};
+
+const copyClientFiles = () => {
+  console.log("📂 Copying client files to deployment directory...");
+  
+  // Copy contents of client/src to deploy/src
+  console.log("  - Copying source files...");
+  fs.cpSync('client/src', 'deploy/src', { recursive: true });
+  
+  // Copy attached_assets to deploy/public/assets
+  console.log("  - Copying assets...");
+  if (fs.existsSync('attached_assets')) {
+    if (!fs.existsSync('deploy/public/assets')) {
+      fs.mkdirSync('deploy/public/assets', { recursive: true });
+    }
+    fs.cpSync('attached_assets', 'deploy/public/assets', { recursive: true });
+  }
+  
+  // Copy shared folder to deploy/shared for types
+  console.log("  - Copying shared types...");
+  if (!fs.existsSync('deploy/shared')) {
+    fs.mkdirSync('deploy/shared', { recursive: true });
+  }
+  fs.cpSync('shared', 'deploy/shared', { recursive: true });
+  
+  // Create a logo.svg file in public
+  console.log("  - Creating logo file...");
+  const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="16" fill="url(#paint0_linear_1201_2)" />
+  <path d="M10.056 21V11.448H13.2C13.8107 11.448 14.336 11.5413 14.776 11.728C15.216 11.9147 15.552 12.1653 15.784 12.48C16.0267 12.7947 16.148 13.1467 16.148 13.536C16.148 13.856 16.0747 14.1493 15.928 14.416C15.7813 14.6827 15.58 14.9067 15.324 15.088C15.0787 15.2693 14.8067 15.3947 14.508 15.464V15.536C14.8493 15.5573 15.1693 15.6613 15.468 15.848C15.7667 16.0347 16.008 16.2853 16.192 16.6C16.3867 16.9147 16.484 17.2773 16.484 17.688C16.484 18.0987 16.3547 18.476 16.096 18.82C15.848 19.164 15.492 19.4373 15.028 19.64C14.564 19.8427 14.0213 19.944 13.4 19.944H10.056V21ZM11.544 18.468H13.092C13.7027 18.468 14.1507 18.3533 14.436 18.124C14.7213 17.8947 14.864 17.5907 14.864 17.212C14.864 16.9347 14.8013 16.684 14.676 16.46C14.5507 16.236 14.3667 16.0573 14.124 15.924C13.892 15.7907 13.608 15.724 13.272 15.724H11.544V18.468ZM11.544 14.472H12.96C13.232 14.472 13.476 14.416 13.692 14.304C13.9187 14.1813 14.096 14.0187 14.224 13.816C14.352 13.6133 14.416 13.3853 14.416 13.132C14.416 12.7853 14.284 12.4973 14.02 12.268C13.7667 12.0387 13.3933 11.924 12.9 11.924H11.544V14.472ZM18.1558 21V11.448H19.6438V20.524H24.4358V21H18.1558Z" fill="white" />
+  <defs>
+    <linearGradient id="paint0_linear_1201_2" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0984E3" />
+      <stop offset="1" stop-color="#74B9FF" />
+    </linearGradient>
+  </defs>
+</svg>`;
+  
+  fs.writeFileSync('deploy/public/logo.svg', logoSvg);
+  
+  console.log("✅ Client files copied to deployment directory");
+};
+
+const updateSourcePaths = () => {
+  console.log("🔄 Updating import paths for deployment...");
+  
+  // Function to recursively process all TypeScript and JavaScript files
+  const processDirectory = (directory) => {
+    const entries = fs.readdirSync(directory, { withFileTypes: true });
+    
+    for (const entry of entries) {
+      const fullPath = path.join(directory, entry.name);
+      
+      if (entry.isDirectory()) {
+        processDirectory(fullPath);
+      } else if (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx') || entry.name.endsWith('.js')) {
+        let content = fs.readFileSync(fullPath, 'utf8');
+        
+        // Replace import paths
+        content = content.replace(/@assets\//g, '/assets/');
+        content = content.replace(/@shared\//g, '../shared/');
+        content = content.replace(/@\//g, './');
+        
+        fs.writeFileSync(fullPath, content);
+      }
+    }
+  };
+  
+  processDirectory('deploy/src');
+  console.log("✅ Import paths updated");
+};
+
+const createDeploymentInstructions = () => {
+  console.log("📝 Creating deployment instructions...");
+  
+  const instructions = `
+# GitHub Pages Deployment Instructions
+
+Follow these steps to deploy your portfolio site to GitHub Pages:
+
+## Step 1: Create a GitHub Repository
+
+1. Go to GitHub and create a new repository named exactly: \`alqamah-sayeed.github.io\`
+
+## Step 2: Upload the Code
+
+1. Download the entire 'deploy' directory from this Replit project
+2. Extract the contents and push them to your GitHub repository:
+
+\`\`\`bash
+git clone https://github.com/Alqamah-Sayeed/alqamah-sayeed.github.io.git
+cd alqamah-sayeed.github.io
+# Copy all files from the 'deploy' directory here
+git add .
+git commit -m "Initial portfolio website"
+git push -u origin main
+\`\`\`
+
+## Step 3: Install Dependencies and Deploy
+
+Run these commands in your repository:
+
+\`\`\`bash
+npm install
+npm run deploy
+\`\`\`
+
+## Step 4: Configure GitHub Pages
+
+1. Go to your GitHub repository settings
+2. Navigate to Pages in the sidebar
+3. Ensure the branch is set to \`gh-pages\`
+4. Your site will be published at https://alqamah-sayeed.github.io
+
+## Making Future Updates
+
+When you want to update your site:
+
+1. Make your changes
+2. Commit and push to main branch
+3. Run \`npm run deploy\` again
+`;
+
+  fs.writeFileSync('GITHUB_DEPLOYMENT_INSTRUCTIONS.md', instructions);
+  console.log("✅ Deployment instructions created: GITHUB_DEPLOYMENT_INSTRUCTIONS.md");
+};
+
+// Run all the deployment preparation steps
+try {
+  createDeploymentFiles();
+  copyClientFiles();
+  updateSourcePaths();
+  createDeploymentInstructions();
+  
+  console.log("\n🎉 Deployment preparation complete!");
+  console.log("📝 Detailed instructions are available in: GITHUB_DEPLOYMENT_INSTRUCTIONS.md");
+  console.log("📁 Your deployment files are ready in the 'deploy' directory");
+  console.log("\nNext steps:");
+  console.log("1. Download the 'deploy' directory");
+  console.log("2. Follow the instructions in GITHUB_DEPLOYMENT_INSTRUCTIONS.md");
+} catch (error) {
+  console.error("❌ Error during deployment preparation:", error);
+}
