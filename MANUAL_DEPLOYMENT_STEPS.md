@@ -1,168 +1,48 @@
-# Manual Deployment Instructions for GitHub Pages
+# Manual Deployment Steps for GitHub Pages
 
-Since downloading the entire `deploy` directory may not be possible directly from Replit, I'll provide detailed instructions on how to manually create the essential files for deployment to GitHub Pages.
+This document provides step-by-step instructions for manually deploying your portfolio website to GitHub Pages at `alqamahsayeed.github.io`.
 
-## Step 1: Create Your GitHub Repository
+## Step 1: Set Up a New Repository Locally
 
-1. Go to [GitHub.com](https://github.com/new)
-2. Sign in to your GitHub account
-3. Create a new repository with the following settings:
-   - Repository name: **exactly** `alqamah-sayeed.github.io` (this specific name is required for GitHub Pages)
-   - Description: "Alqamah Sayeed's Portfolio Website"
-   - Visibility: Public
-   - Initialize with a README: Yes
-   - Click "Create repository"
+### Create a New Directory for Deployment
 
-## Step 2: Set Up the Basic Structure Locally
-
-1. Clone your new repository:
-   ```bash
-   git clone https://github.com/Alqamah-Sayeed/alqamah-sayeed.github.io.git
-   cd alqamah-sayeed.github.io
-   ```
-
-2. Create the following folder structure:
-   ```
-   alqamah-sayeed.github.io/
-   ├── public/
-   │   └── assets/  (create this for your assets)
-   ├── src/
-   │   ├── components/
-   │   ├── data/
-   │   ├── hooks/
-   │   ├── lib/
-   │   ├── pages/
-   │   └── assets/
-   ├── .nojekyll
-   ├── index.html
-   ├── package.json
-   ├── vite.config.js
-   └── README.md
-   ```
-
-## Step 3: Create Essential Files
-
-### Create index.html
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional portfolio for Alqamah Sayeed, a research scientist specializing in atmospheric science." />
-    <title>Alqamah Sayeed | Atmospheric Science</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+```bash
+mkdir portfolio-deploy
+cd portfolio-deploy
 ```
 
-### Create vite.config.js
-```javascript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
-import path from 'path';
+### Initialize npm and Create package.json
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: '/',
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@assets': path.resolve(__dirname, './public/assets'),
-      '@shared': path.resolve(__dirname, './shared'),
-    },
-  },
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-  },
-});
+```bash
+npm init -y
 ```
 
-### Create package.json
+Edit the generated `package.json` to include:
+
 ```json
 {
-  "name": "alqamah-sayeed-portfolio",
+  "name": "alqamahsayeed-portfolio",
   "version": "1.0.0",
-  "type": "module",
-  "homepage": "https://alqamah-sayeed.github.io",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.10.0",
-    "@radix-ui/react-accordion": "^1.2.4",
-    "@radix-ui/react-alert-dialog": "^1.1.7",
-    "@radix-ui/react-aspect-ratio": "^1.1.3",
-    "@radix-ui/react-avatar": "^1.1.4",
-    "@radix-ui/react-checkbox": "^1.1.5",
-    "@radix-ui/react-collapsible": "^1.1.4",
-    "@radix-ui/react-context-menu": "^2.2.7",
-    "@radix-ui/react-dialog": "^1.1.7",
-    "@radix-ui/react-dropdown-menu": "^2.1.7",
-    "@radix-ui/react-hover-card": "^1.1.7",
-    "@radix-ui/react-label": "^2.1.3",
-    "@radix-ui/react-menubar": "^1.1.7",
-    "@radix-ui/react-navigation-menu": "^1.2.6",
-    "@radix-ui/react-popover": "^1.1.7",
-    "@radix-ui/react-progress": "^1.1.3",
-    "@radix-ui/react-radio-group": "^1.2.4",
-    "@radix-ui/react-scroll-area": "^1.2.4",
-    "@radix-ui/react-select": "^2.1.7",
-    "@radix-ui/react-separator": "^1.1.3",
-    "@radix-ui/react-slider": "^1.2.4",
-    "@radix-ui/react-slot": "^1.2.0",
-    "@radix-ui/react-switch": "^1.1.4",
-    "@radix-ui/react-tabs": "^1.1.4",
-    "@radix-ui/react-toast": "^1.2.7",
-    "@radix-ui/react-toggle": "^1.1.3",
-    "@radix-ui/react-toggle-group": "^1.1.3",
-    "@radix-ui/react-tooltip": "^1.2.0",
-    "@tanstack/react-query": "^5.60.5",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cmdk": "^1.1.1",
-    "date-fns": "^3.6.0",
-    "embla-carousel-react": "^8.6.0",
-    "framer-motion": "^11.18.2",
-    "input-otp": "^1.4.2",
-    "lucide-react": "^0.453.0",
-    "next-themes": "^0.4.6",
-    "react": "^18.3.1",
-    "react-day-picker": "^8.10.1",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.55.0",
-    "react-icons": "^5.4.0",
-    "react-resizable-panels": "^2.1.7",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "vaul": "^1.1.2",
-    "wouter": "^3.3.5",
-    "zod": "^3.24.2",
-    "zod-validation-error": "^3.4.0"
+    "framer-motion": "^11.0.8",
+    "lucide-react": "^0.345.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "wouter": "^3.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "@tailwindcss/vite": "^4.1.3",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.2",
-    "autoprefixer": "^10.4.20",
-    "gh-pages": "^6.1.1",
-    "postcss": "^8.4.47",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
     "tailwindcss": "^3.4.17",
     "typescript": "5.6.3",
     "vite": "^5.4.14"
@@ -176,7 +56,7 @@ This should be an empty file. Its presence tells GitHub Pages not to process you
 touch .nojekyll
 ```
 
-## Step 4: Copy Your Source Files
+## Step 2: Copy Your Source Files
 
 1. Copy the content from the Replit project to your local repository:
    - **From Replit**: Copy the code from each component file in the `client/src` directory
@@ -198,74 +78,197 @@ touch .nojekyll
    - Change `@/` to `./`
 
 4. Copy your assets:
-   - Copy images and other assets from `attached_assets` directory in Replit to `public/assets` in your local repo
+   - Copy images from `client/src/assets` to `src/assets`
 
-## Step 5: Create GitHub Workflow (Optional)
+## Step 3: Create Configuration Files
 
-Create a file at `.github/workflows/deploy.yml` for automated deployment:
+### Create vite.config.ts
 
-```yaml
-name: Deploy to GitHub Pages
+```typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies 📦
-        run: npm install
-
-      - name: Build 🔧
-        run: npm run build
-        env:
-          NODE_ENV: production
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
+export default defineConfig({
+  plugins: [react()],
+  base: '/',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+    },
+  },
+});
 ```
 
-## Step 6: Push Your Code and Deploy
+### Create tsconfig.json
 
-1. Commit all your changes:
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
+
+### Create tsconfig.node.json
+
+```json
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+```
+
+### Create postcss.config.js
+
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+### Create tailwind.config.js
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: "var(--primary)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        muted: "var(--muted)",
+        "primary-foreground": "var(--primary-foreground)",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+## Step 4: Create a simple index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Alqamah Sayeed - Atmospheric Scientist and Machine Learning Researcher" />
+    <title>Alqamah Sayeed | Portfolio</title>
+    
+    <!-- SPA Redirect for GitHub Pages -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+```
+
+## Step 5: Build the Project
+
+```bash
+npm install
+npm run build
+```
+
+## Step 6: Deploy to GitHub Pages
+
+1. Create a GitHub repository named exactly `alqamahsayeed.github.io`
+
+2. Initialize git in your local repository:
    ```bash
+   git init
    git add .
-   git commit -m "Initial portfolio website"
+   git commit -m "Initial commit"
+   ```
+
+3. Connect to GitHub and push:
+   ```bash
+   git remote add origin https://github.com/alqamahsayeed/alqamahsayeed.github.io.git
+   git branch -M main
    git push -u origin main
    ```
 
-2. Install dependencies and deploy:
-   ```bash
-   npm install
-   npm run deploy
-   ```
+4. Wait a few minutes for GitHub Pages to build and deploy your site
 
-3. Configure GitHub Pages:
-   - Go to your GitHub repository settings
-   - Navigate to Pages in the sidebar
-   - Ensure the branch is set to `gh-pages`
-   - Your site will be published at https://alqamah-sayeed.github.io
+5. Visit `https://alqamahsayeed.github.io` to see your live site
 
-## Important Notes
+## Step 7: Creating a 404.html Page for SPA Routing
 
-1. Make sure to create the `.nojekyll` file (it must be empty)
-2. The repository name must be exactly `alqamah-sayeed.github.io` for GitHub Pages to work correctly
-3. If you encounter issues with paths, double-check your import statements and make sure they use the correct relative paths
-4. For troubleshooting deployment issues, see the GitHub Pages documentation
+Create a `404.html` file in the root of your repository:
 
-I recommend copying each source file individually if you can't download the entire project. Focus on getting the structure correct, and then work on copying the content file by file.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <script>
+    // Single Page App redirection
+    const pathSegmentsToKeep = 0;
+    
+    const l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+  <h1>Page Not Found</h1>
+  <p>Redirecting to homepage...</p>
+</body>
+</html>
+```

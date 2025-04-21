@@ -1,149 +1,92 @@
-// static-deploy.js
-import { exec } from 'child_process';
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// Get dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Create a simple deploy script
-console.log("📦 Preparing for GitHub Pages deployment...");
-
-// Create temporary build directory if it doesn't exist
-if (!fs.existsSync('build')) {
-  fs.mkdirSync('build');
+// Create a clean build using the static config
+console.log('Creating static build for GitHub Pages...');
+try {
+  execSync('npx vite build --config vite.config.static.ts', { stdio: 'inherit' });
+  console.log('Static build created successfully in the dist directory');
+} catch (error) {
+  console.error('Static build failed:', error);
+  process.exit(1);
 }
 
-// Copy client files to build directory
-console.log("📂 Copying client files...");
-fs.cpSync(path.join(__dirname, 'client'), path.join(__dirname, 'build', 'client'), { recursive: true });
+// Create some additional files needed for GitHub Pages
+console.log('Adding GitHub Pages specific files...');
 
-// Copy necessary assets
-console.log("📂 Copying assets...");
-if (fs.existsSync(path.join(__dirname, 'attached_assets'))) {
-  fs.cpSync(path.join(__dirname, 'attached_assets'), path.join(__dirname, 'build', 'attached_assets'), { recursive: true });
-}
+// Create .nojekyll file (prevents GitHub from processing your site with Jekyll)
+fs.writeFileSync(path.join('dist', '.nojekyll'), '');
 
-// Copy shared folder for types
-console.log("📂 Copying shared files...");
-fs.cpSync(path.join(__dirname, 'shared'), path.join(__dirname, 'build', 'shared'), { recursive: true });
-
-// Copy static vite config
-console.log("📄 Copying build configuration...");
-fs.copyFileSync(path.join(__dirname, 'vite.config.static.ts'), path.join(__dirname, 'build', 'vite.config.ts'));
-
-// Copy package.json and modify for static build
-console.log("📄 Creating package.json for static build...");
-const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-
-// Create a simplified version for GitHub Pages
-const staticPackageJson = {
-  name: "alqamah-sayeed-portfolio",
-  version: packageJson.version,
-  type: "module",
-  private: true,
-  homepage: "https://alqamah-sayeed.github.io",
-  scripts: {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
-  dependencies: {},
-  devDependencies: {}
-};
-
-// Copy over only the necessary dependencies
-const clientDeps = [
-  'react', 'react-dom', 'react-hook-form', '@hookform/resolvers', 'react-icons',
-  'framer-motion', 'wouter', '@tanstack/react-query', 'clsx', 'class-variance-authority',
-  'lucide-react', 'tailwind-merge', 'tailwindcss-animate', 'zod', 'date-fns',
-  'cmdk', 'embla-carousel-react', 'next-themes', 'react-day-picker', 'zod-validation-error'
-];
-
-const uiDeps = [
-  '@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-aspect-ratio',
-  '@radix-ui/react-avatar', '@radix-ui/react-checkbox', '@radix-ui/react-collapsible',
-  '@radix-ui/react-context-menu', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu',
-  '@radix-ui/react-hover-card', '@radix-ui/react-label', '@radix-ui/react-menubar',
-  '@radix-ui/react-navigation-menu', '@radix-ui/react-popover', '@radix-ui/react-progress',
-  '@radix-ui/react-radio-group', '@radix-ui/react-scroll-area', '@radix-ui/react-select',
-  '@radix-ui/react-separator', '@radix-ui/react-slider', '@radix-ui/react-slot',
-  '@radix-ui/react-switch', '@radix-ui/react-tabs', '@radix-ui/react-toast',
-  '@radix-ui/react-toggle', '@radix-ui/react-toggle-group', '@radix-ui/react-tooltip'
-];
-
-// Add client dependencies
-for (const dep of [...clientDeps, ...uiDeps]) {
-  if (packageJson.dependencies[dep]) {
-    staticPackageJson.dependencies[dep] = packageJson.dependencies[dep];
-  }
-}
-
-// Add dev dependencies
-const devDeps = [
-  'vite', '@vitejs/plugin-react', 'gh-pages', 'tailwindcss', 'postcss',
-  'autoprefixer', '@types/react', '@types/react-dom', 'typescript',
-  '@tailwindcss/typography', '@tailwindcss/vite'
-];
-
-for (const dep of devDeps) {
-  if (packageJson.devDependencies[dep]) {
-    staticPackageJson.devDependencies[dep] = packageJson.devDependencies[dep];
-  }
-}
-
-// Add gh-pages if not present
-if (!staticPackageJson.devDependencies['gh-pages']) {
-  staticPackageJson.devDependencies['gh-pages'] = "^6.0.0";
-}
-
-// Write the static package.json
-fs.writeFileSync(path.join(__dirname, 'build', 'package.json'), JSON.stringify(staticPackageJson, null, 2));
-
-// Create index.html in the root for GitHub Pages
-console.log("📄 Creating index.html...");
-fs.copyFileSync(path.join(__dirname, 'client', 'index.html'), path.join(__dirname, 'build', 'index.html'));
-
-// Create a .nojekyll file to prevent GitHub Pages from ignoring files that begin with an underscore
-fs.writeFileSync(path.join(__dirname, 'build', '.nojekyll'), '');
-
-// Create README.md with deployment instructions
-console.log("📄 Creating README.md with deployment instructions...");
-const readmeContent = `# Alqamah Sayeed Portfolio
-
-This is the portfolio website for Alqamah Sayeed, showcasing research, publications, and professional experience.
-
-## Deployment Instructions
-
-To deploy this site to GitHub Pages:
-
-1. Install dependencies:
-   \`\`\`bash
-   npm install
-   \`\`\`
-
-2. Build and deploy:
-   \`\`\`bash
-   npm run deploy
-   \`\`\`
-
-Your site will be deployed to [https://alqamah-sayeed.github.io](https://alqamah-sayeed.github.io)
-
-## Local Development
-
-To run locally:
-\`\`\`bash
-npm run dev
-\`\`\`
+// Create a simple 404 page that redirects to index.html
+const notFoundHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <script>
+    // Single Page App redirection
+    // https://github.com/rafgraph/spa-github-pages
+    const pathSegmentsToKeep = 0; // Change to 1 if using repo name in path
+    
+    const l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+  <h1>Page Not Found</h1>
+  <p>Redirecting to homepage...</p>
+</body>
+</html>
 `;
 
-fs.writeFileSync(path.join(__dirname, 'build', 'README.md'), readmeContent);
+fs.writeFileSync(path.join('dist', '404.html'), notFoundHtml);
 
-console.log("✅ Build directory prepared!");
-console.log("🔍 Next steps:");
-console.log("1. Copy the contents of the 'build' directory to your GitHub repository");
-console.log("2. Run 'npm install' in the repository");
-console.log("3. Run 'npm run deploy' to publish to GitHub Pages");
-console.log("Your portfolio will be available at https://alqamah-sayeed.github.io");
+// Modify index.html to handle SPA redirects
+const indexPath = path.join('dist', 'index.html');
+let indexHtml = fs.readFileSync(indexPath, 'utf8');
+
+// Add SPA redirect script
+const redirectScript = `
+  <!-- Start Single Page Apps for GitHub Pages -->
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+  <!-- End Single Page Apps for GitHub Pages -->
+`;
+
+// Insert script before closing head tag
+indexHtml = indexHtml.replace('</head>', redirectScript + '</head>');
+
+fs.writeFileSync(indexPath, indexHtml);
+
+console.log('GitHub Pages configuration completed. Your static files are ready in the dist directory.');
+console.log('\nTo deploy:');
+console.log('1. Create a GitHub repository named alqamahsayeed.github.io');
+console.log('2. Use the deploy-gh-pages.js script: node deploy-gh-pages.js');
+console.log('   OR');
+console.log('3. Manually push the dist folder contents to the main branch of your repository');
