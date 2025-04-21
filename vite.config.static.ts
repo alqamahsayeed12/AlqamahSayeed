@@ -1,32 +1,26 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
-import { themeJSONPlugin } from '@replit/vite-plugin-shadcn-theme-json';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: "/",
   plugins: [
     react(),
     tailwindcss(),
-    themeJSONPlugin(),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './client/src'),
-      '@assets': path.resolve(__dirname, './attached_assets'),
-      '@shared': path.resolve(__dirname, './shared'),
+      "@": path.resolve(__dirname, "./client/src"),
+      "@assets": path.resolve(__dirname, "./attached_assets"),
+      "@shared": path.resolve(__dirname, "./shared"),
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     emptyOutDir: true,
-    // Don't include server-side code in the build
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'client/index.html'),
-      },
-    },
   },
+  // Make sure to specify the root directory with the index.html file
+  root: "."
 });
