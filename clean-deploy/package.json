@@ -1,7 +1,7 @@
 {
   "name": "alqamah-sayeed-portfolio",
   "version": "1.0.0",
-  "homepage": "https://alqamah-sayeed.github.io",
+  "homepage": "https://alqamahsayeed12.github.io/alqamah-sayeed.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/alqamah-sayeed.github.io/',  // Update the base URL to match your repository name
   plugins: [react()],
   resolve: {
     alias: {
