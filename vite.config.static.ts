@@ -17,4 +17,5 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './client/src/assets'),
     },
   },
+  root: path.resolve(__dirname, './client'),
 });

@@ -10,6 +10,8 @@ const __dirname = path.dirname(__filename);
 // Create a clean build using the static config
 console.log('Creating static build for GitHub Pages...');
 try {
+  // Ensure the client directory is used as root
+  console.log('Using client directory as root for the build process...');
   execSync('npx vite build --config vite.config.static.ts', { stdio: 'inherit' });
   console.log('Static build created successfully in the dist directory');
 } catch (error) {
