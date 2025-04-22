@@ -86,7 +86,12 @@ fs.writeFileSync(indexPath, indexHtml);
 
 console.log('GitHub Pages configuration completed. Your static files are ready in the dist directory.');
 console.log('\nTo deploy:');
-console.log('1. Create a GitHub repository named alqamahsayeed.github.io');
+console.log('1. Create a GitHub repository named alqamahsayeed.github.io under the username alqamahsayeed12');
 console.log('2. Use the deploy-gh-pages.js script: node deploy-gh-pages.js');
 console.log('   OR');
 console.log('3. Manually push the dist folder contents to the main branch of your repository');
+console.log('\nAfter deployment:');
+console.log('1. Go to your GitHub repository settings');
+console.log('2. Navigate to Pages in the sidebar');
+console.log('3. Make sure the branch is set to main or gh-pages (depending on the deployment method)');
+console.log('4. Your site will be published at https://alqamahsayeed.github.io');

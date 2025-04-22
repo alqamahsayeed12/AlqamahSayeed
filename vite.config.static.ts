@@ -5,7 +5,7 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Change to '/your-repo-name/' if not using custom domain
+  base: '/', // Using root path for GitHub Pages with custom domain-style repo name
   build: {
     outDir: 'dist',
     emptyOutDir: true,
