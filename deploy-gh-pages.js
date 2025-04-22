@@ -9,8 +9,9 @@ const __dirname = path.dirname(__filename);
 
 // Configuration
 const BUILD_DIR = 'dist';
-const GITHUB_PAGES_BRANCH = 'gh-pages';
-const GITHUB_REPO = 'alqamahsayeed.github.io';
+const GITHUB_PAGES_BRANCH = 'main'; // Using main branch for GitHub Pages
+const GITHUB_USERNAME = 'alqamahsayeed12'; // Your GitHub username
+const GITHUB_REPO = 'alqamahsayeed.github.io'; // Your repository name
 
 // Create a clean build
 console.log('1. Building the project...');
@@ -38,22 +39,22 @@ try {
   execSync('git add -A', { stdio: 'inherit' });
   execSync('git commit -m "Deploy to GitHub Pages"', { stdio: 'inherit' });
   
-  // Push to the gh-pages branch
-  console.log(`Pushing to ${GITHUB_REPO} repository...`);
-  execSync(`git push -f git@github.com:alqamahsayeed/${GITHUB_REPO}.git main:${GITHUB_PAGES_BRANCH}`, { stdio: 'inherit' });
+  // Push to the GitHub Pages branch
+  console.log(`Pushing to ${GITHUB_REPO} repository under username ${GITHUB_USERNAME}...`);
+  execSync(`git push -f git@github.com:${GITHUB_USERNAME}/${GITHUB_REPO}.git main:${GITHUB_PAGES_BRANCH}`, { stdio: 'inherit' });
   
-  console.log('\nDeployment complete! Your site will be available at https://alqamahsayeed.github.io shortly.');
+  console.log(`\nDeployment complete! Your site will be available at https://${GITHUB_REPO} shortly.`);
   
   process.chdir('..');
 } catch (error) {
   console.error('Deployment failed:', error);
   console.log('\nManual deployment instructions:');
-  console.log('1. Create a new GitHub repository named alqamahsayeed.github.io');
+  console.log(`1. Create a new GitHub repository named ${GITHUB_REPO} under username ${GITHUB_USERNAME}`);
   console.log('2. Initialize git in the dist directory: cd dist && git init');
   console.log('3. Add files: git add -A');
   console.log('4. Commit: git commit -m "Deploy to GitHub Pages"');
-  console.log('5. Add your GitHub repository as remote: git remote add origin https://github.com/alqamahsayeed/alqamahsayeed.github.io.git');
-  console.log('6. Push to main: git push -f origin main');
+  console.log(`5. Add your GitHub repository as remote: git remote add origin https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}.git`);
+  console.log(`6. Push to ${GITHUB_PAGES_BRANCH}: git push -f origin ${GITHUB_PAGES_BRANCH}`);
   
   process.exit(1);
 }

@@ -17,6 +17,7 @@ const filesToInclude = [
   'DEPLOYMENT_GUIDE.md',
   'DEPLOYMENT_CHECKLIST.md',
   'MANUAL_DEPLOYMENT_STEPS.md',
+  'GITHUB_PAGES_INSTRUCTIONS.md',
   'package.json',
   'tsconfig.json',
   'postcss.config.js',
@@ -119,6 +120,10 @@ try {
 
 This package contains all the files needed to build and deploy your portfolio website to GitHub Pages.
 
+## IMPORTANT: Special Configuration
+This package is specifically configured for deploying to a repository named \`alqamahsayeed.github.io\` 
+under the GitHub username \`alqamahsayeed12\`.
+
 ## Quick Start
 
 1. Extract this archive to a local directory
@@ -131,7 +136,8 @@ npm run prepare
 npm run deploy
 \`\`\`
 
-For detailed instructions, please read the DEPLOYMENT_GUIDE.md file.
+For specific instructions for your GitHub setup, please read the GITHUB_PAGES_INSTRUCTIONS.md file.
+For more detailed general instructions, see DEPLOYMENT_GUIDE.md or DEPLOYMENT_CHECKLIST.md.
 `;
   
   fs.writeFileSync(path.join(tempDir, 'README.md'), readmeContent);
