@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   root: path.resolve("client"),
-  base: "./", // Sets the base path to relative for GitHub Pages
+  base: "/", // Sets the base path for GitHub Pages
   build: {
     outDir: path.resolve("dist"),
     emptyOutDir: true,
